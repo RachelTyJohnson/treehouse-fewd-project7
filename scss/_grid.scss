@@ -22,6 +22,21 @@
   }
 }
 
+.bottomwidgets{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "newmembers" "recent" "message" "settings";
+
+  @include tablet{
+    grid-template:1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+      "newmembers recent"
+      "message settings";
+  }
+}
+
 header{
   display:flex;
   grid-area: header;
@@ -37,4 +52,20 @@ nav{
 main{
   grid-area:main;
   background-color:$brand-color-neutral;
+}
+
+.newmembers{
+  grid-area:newmembers;
+}
+
+.recent{
+  grid-area:recent;
+}
+
+.message{
+  grid-area:message;
+}
+
+.settings{
+  grid-area:settings;
 }
