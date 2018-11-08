@@ -108,6 +108,10 @@ main {
   font-family: "PT Sans", sans-serif;
 }
 
+*:focus {
+  outline: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #2d6654;
 }
@@ -120,10 +124,6 @@ h1 {
 h2 {
   font-size: 0.8em;
   text-transform: uppercase;
-}
-
-input:focus {
-  outline: none;
 }
 
 body {
@@ -219,10 +219,10 @@ main .topsection input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 2px #459b80 solid;
+  border: 2px #dedede solid;
 }
 main .topsection input:focus {
-  border: 2px #2d6654 solid;
+  border: 2px #459b80 solid;
 }
 @media (min-width: 600px) {
   main .topsection input {
@@ -343,6 +343,36 @@ main .bottomwidgets .recent .actioncontainer img:nth-of-type(2) {
 }
 main .bottomwidgets .recent .actioncontainer img:nth-of-type(2):hover {
   opacity: 1;
+}
+main .bottomwidgets .message {
+  padding-right: 20px;
+}
+main .bottomwidgets .message input,
+main .bottomwidgets .message textarea {
+  width: 100%;
+  border: 2px solid #dedede;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+main .bottomwidgets .message input:focus,
+main .bottomwidgets .message textarea:focus {
+  border-color: #459b80;
+}
+main .bottomwidgets .message button {
+  width: 100%;
+  border: 0;
+  background-color: #459b80;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+main .bottomwidgets .message button:hover {
+  background-color: #2d6654;
 }
 
 /*# sourceMappingURL=style.css.map */

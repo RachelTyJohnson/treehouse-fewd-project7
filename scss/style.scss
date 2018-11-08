@@ -10,6 +10,10 @@
   font-family: $brand-font-primary;
 }
 
+*:focus {
+  outline:none;
+}
+
 h1,h2,h3,h4,h5,h6{
   color:$brand-color-darker;
 }
@@ -22,10 +26,6 @@ h1{
 h2{
   font-size:0.8em;
   text-transform: uppercase;
-}
-
-input:focus {
-    outline:none;
 }
 
 body{
@@ -113,9 +113,9 @@ main{
       width:100%;
       padding:10px;
       border-radius: $borderradius;
-      border:2px $brand-color-primary solid;
+      border:2px $brand-color-mutual-darker solid;
       &:focus{
-        border:2px $brand-color-darker solid;
+        border:2px $brand-color-primary solid;
       }
       @include tablet{
         width:300px;
@@ -243,6 +243,36 @@ main{
         transition:opacity 0.3s;
         &:hover{
           opacity:1;
+        }
+      }
+    }
+
+    .message{
+      padding-right:20px;
+      input,
+      textarea{
+        width:100%;
+        border: 2px solid $brand-color-mutual-darker;
+        border-radius:$borderradius;
+        padding:5px 10px;
+        margin-bottom:10px;
+        &:focus{
+          border-color: $brand-color-primary;
+        }
+      }
+      button{
+        width:100%;
+        border:0;
+        background-color:$brand-color-primary;
+        color:white;
+        border-radius:$borderradius;
+        padding:20px;
+        font-weight:700;
+        font-size:1.2em;
+        cursor:pointer;
+        transition:background-color 0.2s;
+        &:hover{
+          background-color:$brand-color-darker;
         }
       }
     }
