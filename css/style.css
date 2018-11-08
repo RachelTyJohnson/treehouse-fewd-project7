@@ -79,6 +79,10 @@ main {
   font-family: "PT Sans", sans-serif;
 }
 
+input:focus {
+  outline: none;
+}
+
 body {
   background-image: url("../img/background.png");
 }
@@ -145,6 +149,55 @@ nav a img:hover {
     justify-content: flex-start;
     padding-top: 25px;
   }
+}
+
+main {
+  padding: 15px;
+}
+main .topsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media (min-width: 600px) {
+  main .topsection {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+main .topsection h1 {
+  color: #2d6654;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+main .topsection input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px #459b80 solid;
+}
+main .topsection input:focus {
+  border: 2px #2d6654 solid;
+}
+@media (min-width: 600px) {
+  main .topsection input {
+    width: 300px;
+  }
+}
+main .alert {
+  background-color: #459b80;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+main .alert span {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
