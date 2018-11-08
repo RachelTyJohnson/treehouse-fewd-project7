@@ -188,7 +188,7 @@ main .topsection input:focus {
 }
 main .alert {
   background-color: #459b80;
-  padding: 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   color: white;
   display: flex;
