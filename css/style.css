@@ -79,6 +79,19 @@ main {
   font-family: "PT Sans", sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #2d6654;
+}
+
+h1 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
 input:focus {
   outline: none;
 }
@@ -167,11 +180,6 @@ main .topsection {
     justify-content: space-between;
   }
 }
-main .topsection h1 {
-  color: #2d6654;
-  font-size: 1.4em;
-  margin-bottom: 10px;
-}
 main .topsection input {
   width: 100%;
   padding: 10px;
@@ -198,6 +206,47 @@ main .alert {
 }
 main .alert span {
   cursor: pointer;
+}
+main .social {
+  padding: 15px;
+  border-top: 1px #dedede solid;
+  border-bottom: 1px #dedede solid;
+}
+main .social h2 {
+  margin-bottom: 10px;
+}
+main .social .card-container {
+  display: flex;
+  flex-direction: column;
+}
+main .social .card-container .card {
+  border: 2px #dedede solid;
+  border-radius: 5px;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+main .social .card-container .card img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+main .social .card-container .card span {
+  font-size: 2em;
+}
+@media (min-width: 1024px) {
+  main .social .card-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main .social .card-container .card {
+    width: 30%;
+    justify-content: flex-start;
+  }
+  main .social .card-container .card img {
+    margin-left: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

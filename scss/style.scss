@@ -10,6 +10,19 @@
   font-family: $brand-font-primary;
 }
 
+h1,h2,h3,h4,h5,h6{
+  color:$brand-color-darker;
+}
+
+h1{
+  font-size:1.4em;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:1.2em;
+}
+
 input:focus {
     outline:none;
 }
@@ -93,12 +106,6 @@ main{
       justify-content: space-between;
     }
 
-    h1{
-      color:$brand-color-darker;
-      font-size:1.4em;
-      margin-bottom:10px;
-    }
-
     input{
       width:100%;
       padding:10px;
@@ -125,5 +132,45 @@ main{
     }
     opacity:1;
     transition: opacity 0.3s linear;
+  }
+
+  .social{
+    padding:15px;
+    border-top:1px $brand-color-mutual-darker solid;
+    border-bottom:1px $brand-color-mutual-darker solid;
+    h2{
+      margin-bottom:10px;
+    }
+    .card-container{
+      display:flex;
+      flex-direction: column;
+      .card{
+        border:2px $brand-color-mutual-darker solid;
+        border-radius:$borderradius;
+        padding:15px 10px;
+        display:flex;
+        justify-content: center;
+        margin-bottom:10px;
+        img{
+          width:70px;
+          height:70px;
+          margin-right:20px;
+        }
+        span{
+          font-size:2em;
+        }
+      }
+      @include desktop{
+        flex-direction: row;
+        justify-content: space-between;
+        .card{
+          width:30%;
+          justify-content:flex-start;
+          img{
+            margin-left:20px;
+          }
+        }
+      }
+    }
   }
 }
