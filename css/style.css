@@ -37,6 +37,41 @@ main {
   background-color: #f7f7f7;
 }
 
+@keyframes bellalert {
+  0% {
+    transform: rotate(25deg);
+  }
+  10% {
+    transform: rotate(-25deg);
+  }
+  20% {
+    transform: rotate(25deg);
+  }
+  30% {
+    transform: rotate(-25deg);
+  }
+  40% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+  60% {
+    transform: rotate(25deg);
+  }
+  70% {
+    transform: rotate(-25deg);
+  }
+  80% {
+    transform: rotate(25deg);
+  }
+  90% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +96,10 @@ header {
   }
 }
 header .bell {
-  height: 55%;
+  height: 50%;
+}
+header .bell:hover {
+  animation: bellalert 1s infinite linear;
 }
 header .logo {
   margin-right: auto;
@@ -76,7 +114,7 @@ header .user {
   margin-left: 10px;
 }
 header .user .userimage {
-  width: 35px;
+  width: 30px;
   border-radius: 100%;
   margin-right: 10px;
 }
@@ -95,10 +133,11 @@ nav a img {
   margin: 15px auto;
   height: 25px;
   opacity: 0.5;
-  transition: opacity 0.3s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 nav a img:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 @media (min-width: 600px) {
   nav {

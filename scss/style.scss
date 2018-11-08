@@ -1,6 +1,7 @@
 @import 'variables',
         'mixins',
-        'grid';
+        'grid',
+        'animations';
 
 *{
   margin: 0;
@@ -23,7 +24,10 @@ header {
   align-items: center;
   background-color:$brand-color-primary;
   .bell{
-    height:55%;
+    height:50%;
+    &:hover{
+      animation: bellalert 1s infinite linear;
+    }
   }
   .logo{
     margin-right:auto;
@@ -37,7 +41,7 @@ header {
     padding-left:10px;
     margin-left:10px;
     .userimage{
-      width:35px;
+      width:30px;
       border-radius:100%;
       margin-right:10px;
     }
@@ -57,9 +61,10 @@ nav{
     margin:15px auto;
     height:25px;
     opacity:0.5;
-    transition:opacity 0.3s;
+    transition:transform 0.2s, opacity 0.2s;
     &:hover{
       opacity:1;
+      transform:scale(1.1);
     }
   }
   @include tablet{
