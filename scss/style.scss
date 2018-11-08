@@ -248,6 +248,18 @@ main{
     }
 
     .message{
+      .sentalert,
+      .senderror{
+        @extend .alert;
+        margin-bottom:5px;
+        text-align:center;
+        display:none;
+      }
+
+      .senderror{
+        background-color:darkred;
+      }
+
       padding-right:20px;
       input,
       textarea{
@@ -276,6 +288,5 @@ main{
         }
       }
     }
-
   }
 }

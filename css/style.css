@@ -229,7 +229,8 @@ main .topsection input:focus {
     width: 300px;
   }
 }
-main .alert {
+main .alert, main .bottomwidgets .message .sentalert,
+main .bottomwidgets .message .senderror {
   background-color: #459b80;
   padding: 10px 15px;
   border-radius: 5px;
@@ -239,7 +240,8 @@ main .alert {
   opacity: 1;
   transition: opacity 0.3s linear;
 }
-main .alert span {
+main .alert span, main .bottomwidgets .message .sentalert span,
+main .bottomwidgets .message .senderror span {
   cursor: pointer;
 }
 main .social {
@@ -346,6 +348,15 @@ main .bottomwidgets .recent .actioncontainer img:nth-of-type(2):hover {
 }
 main .bottomwidgets .message {
   padding-right: 20px;
+}
+main .bottomwidgets .message .sentalert,
+main .bottomwidgets .message .senderror {
+  margin-bottom: 5px;
+  text-align: center;
+  display: none;
+}
+main .bottomwidgets .message .senderror {
+  background-color: darkred;
 }
 main .bottomwidgets .message input,
 main .bottomwidgets .message textarea {
