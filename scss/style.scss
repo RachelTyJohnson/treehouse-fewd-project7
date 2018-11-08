@@ -15,11 +15,36 @@ body{
 
 header {
   padding:7px 10px;
-  img{
-      height:100%;
-  }
   @include tablet{
-    padding-left:20px;
+    padding: auto 20px;
+  }
+  display:flex;
+  grid-area: header;
+  align-items: center;
+  background-color:$brand-color-primary;
+  .bell{
+    height:55%;
+  }
+  .logo{
+    margin-right:auto;
+    height:100%;
+  }
+  .user{
+    display:flex;
+    align-items:center;
+    height:100%;
+    border-left: 2px $brand-color-darker dotted;
+    padding-left:10px;
+    margin-left:10px;
+    .userimage{
+      width:35px;
+      border-radius:100%;
+      margin-right:10px;
+    }
+    .username{
+      color:white;
+      font-size:0.8rem;
+    }
   }
 }
 
