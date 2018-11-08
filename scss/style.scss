@@ -94,8 +94,10 @@ nav{
 }
 
 main{
-  padding:20px;
-
+  padding:10px;
+  @include tablet{
+    padding:20px;
+  }
   .topsection{
     display:flex;
     flex-direction: column;
@@ -175,15 +177,75 @@ main{
     }
   }
 
-  .bottomwidgets div{
-    padding:20px 0;
-    border-bottom:1px solid $brand-color-mutual-darker;
-    @include tablet{
-      &:nth-of-type(2n+1){
-        border-right:1px solid $brand-color-mutual-darker;
-      }&:nth-of-type(2n){
-        padding-left:20px;
+  .bottomwidgets{
+
+    >div{
+      padding:20px 0;
+      border-bottom:1px solid $brand-color-mutual-darker;
+      h2{
+        margin-bottom:20px;
+      }
+      @include desktop{
+        &:nth-of-type(2n+1){
+          border-right:1px solid $brand-color-mutual-darker;
+        }&:nth-of-type(2n){
+          padding-left:20px;
+        }
       }
     }
+
+    .newmembers .actioncontainer,
+    .recent .actioncontainer{
+      display:flex;
+      align-items:center;
+      padding: 5px 0;
+      margin-right:20px;
+      font-size:0.8em;
+      &:not(:last-of-type){
+        border-bottom:1px solid $brand-color-mutual-darker;
+      }
+      img:nth-of-type(1){
+        height:35px;
+        border-radius:100%;
+        margin-right:10px;
+      }
+      >p{
+        margin-left:auto;
+        font-size:0.7rem;
+      }
+    }
+
+    .newmembers .actioncontainer{
+      .details{
+        p{
+          font-weight:700;
+          padding-right:60px;
+        }
+        span{
+          font-size:0.7rem;
+        }
+      }
+    }
+    .recent .actioncontainer{
+      .details{
+        p{
+          padding-right:20px;
+        }
+        span{
+          font-weight:700;
+        }
+      }
+      img:nth-of-type(2){
+        height:15px;
+        margin-left:auto;
+        cursor:pointer;
+        opacity:0.8;
+        transition:opacity 0.3s;
+        &:hover{
+          opacity:1;
+        }
+      }
+    }
+
   }
 }

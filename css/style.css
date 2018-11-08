@@ -26,7 +26,7 @@
   grid-auto-rows: auto;
   grid-template-areas: "newmembers" "recent" "message" "settings";
 }
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
   .bottomwidgets {
     grid-template: 1fr 1fr/1fr 1fr;
     grid-template-areas: "newmembers recent" "message settings";
@@ -195,7 +195,12 @@ nav a img:hover {
 }
 
 main {
-  padding: 20px;
+  padding: 10px;
+}
+@media (min-width: 600px) {
+  main {
+    padding: 20px;
+  }
 }
 main .topsection {
   display: flex;
@@ -278,17 +283,66 @@ main .social .card-container .card span {
     margin-left: 20px;
   }
 }
-main .bottomwidgets div {
+main .bottomwidgets > div {
   padding: 20px 0;
   border-bottom: 1px solid #dedede;
 }
-@media (min-width: 600px) {
-  main .bottomwidgets div:nth-of-type(2n+1) {
+main .bottomwidgets > div h2 {
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  main .bottomwidgets > div:nth-of-type(2n+1) {
     border-right: 1px solid #dedede;
   }
-  main .bottomwidgets div:nth-of-type(2n) {
+  main .bottomwidgets > div:nth-of-type(2n) {
     padding-left: 20px;
   }
+}
+main .bottomwidgets .newmembers .actioncontainer,
+main .bottomwidgets .recent .actioncontainer {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  margin-right: 20px;
+  font-size: 0.8em;
+}
+main .bottomwidgets .newmembers .actioncontainer:not(:last-of-type),
+main .bottomwidgets .recent .actioncontainer:not(:last-of-type) {
+  border-bottom: 1px solid #dedede;
+}
+main .bottomwidgets .newmembers .actioncontainer img:nth-of-type(1),
+main .bottomwidgets .recent .actioncontainer img:nth-of-type(1) {
+  height: 35px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+main .bottomwidgets .newmembers .actioncontainer > p,
+main .bottomwidgets .recent .actioncontainer > p {
+  margin-left: auto;
+  font-size: 0.7rem;
+}
+main .bottomwidgets .newmembers .actioncontainer .details p {
+  font-weight: 700;
+  padding-right: 60px;
+}
+main .bottomwidgets .newmembers .actioncontainer .details span {
+  font-size: 0.7rem;
+}
+main .bottomwidgets .recent .actioncontainer .details p {
+  padding-right: 20px;
+}
+main .bottomwidgets .recent .actioncontainer .details span {
+  font-weight: 700;
+}
+main .bottomwidgets .recent .actioncontainer img:nth-of-type(2) {
+  height: 15px;
+  margin-left: auto;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+main .bottomwidgets .recent .actioncontainer img:nth-of-type(2):hover {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -29,7 +29,7 @@
   grid-template-areas:
     "newmembers" "recent" "message" "settings";
 
-  @include tablet{
+  @include desktop{
     grid-template:1fr 1fr / 1fr 1fr;
     grid-template-areas:
       "newmembers recent"
