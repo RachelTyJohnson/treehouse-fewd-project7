@@ -1,0 +1,38 @@
+.container{
+  max-width:1024px;
+  margin: 0 auto;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px 50px auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+
+  @include tablet{
+    grid-template:60px minmax(500px, 1fr) / 70px minmax(500px, 1fr);
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+
+  @include desktop{
+    grid-template: 60px minmax(500px, 1fr) / 70px minmax(500px, 1fr);
+  }
+}
+
+header{
+  grid-area: header;
+  background-color:$brand-color-primary;
+}
+
+nav{
+  grid-area: nav;
+  background-color:$brand-color-darker;
+}
+
+main{
+  grid-area:main;
+  background-color:$brand-color-mutual;
+}

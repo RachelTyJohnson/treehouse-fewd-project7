@@ -1,0 +1,12 @@
+//colors
+$brand-color-primary:#459b80;
+$brand-color-darker: darken($brand-color-primary, 15%);
+$brand-color-mutual: #f7f7f7;
+
+//breakpoints
+$bp-tablet: 600px;
+$bp-desktop: 1024px;
+
+//fonts
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+$brand-font-primary: 'PT Sans', sans-serif;
