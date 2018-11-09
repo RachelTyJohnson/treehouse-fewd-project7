@@ -133,6 +133,7 @@ main {
   background-color: #347183;
   color: white;
   position: absolute;
+  border-radius: 2px;
   padding: 0 2px;
   z-index: 100;
 }

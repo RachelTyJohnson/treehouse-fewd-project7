@@ -1,3 +1,6 @@
+/* ------------------------------------------- */
+/* NOTIFICATION BELL ------------------------- */
+/* ------------------------------------------- */
 let main = function() {
   $('.notification img').click(function() {
     $('.notification-menu').toggle();
@@ -8,6 +11,7 @@ let main = function() {
   });
 };
 $(document).ready(main);
+
 
 let nots = document.querySelector('.notification h6');
 nots.textContent = "4";
@@ -31,6 +35,13 @@ removeNotification.addEventListener('click', (e) => {
   }
 })
 
+
+
+
+/* ------------------------------------------- */
+/* ALERT NOTIFICATION ------------------------ */
+/* ------------------------------------------- */
+
 let removealert = document.querySelector('main .alert .removealert');
 removealert.addEventListener('click', (e) => {
   let alert = e.target.parentNode.parentNode;
@@ -40,6 +51,12 @@ removealert.addEventListener('click', (e) => {
     main.removeChild(alert);
   }, 301);
 })
+
+
+
+/* ------------------------------------------- */
+/* MESSAGE BUTTON ---------------------------- */
+/* ------------------------------------------- */
 
 let messagebutton = document.querySelector('#messagebutton');
 messagebutton.addEventListener('click', (e) => {
@@ -58,6 +75,12 @@ messagebutton.addEventListener('click', (e) => {
   }
 });
 
+
+/* ------------------------------------------- */
+/* GRAPHS ------------------------------------ */
+/* ------------------------------------------- */
+
+/* Variables */
 let mq = window.matchMedia("(min-width: 1024px)");
 let legendPosition;
 let lineRatio;
@@ -69,6 +92,7 @@ if (mq.matches){
   lineRatio=2;
 }
 
+/* Line Chart */
 let lineChartCont = document.getElementById("lineChart").getContext('2d');
 let lineChart = new Chart(lineChartCont, {
   type: 'line',
@@ -98,7 +122,7 @@ let lineChart = new Chart(lineChartCont, {
   }
 });
 
-
+/* Bar Chart */
 let barChartCont = document.getElementById("barChart").getContext('2d');
 let barChart = new Chart(barChartCont, {
   type: 'bar',
@@ -127,8 +151,7 @@ let barChart = new Chart(barChartCont, {
   }
 });
 
-
-
+/* Donut Chart */
 let donutChartCont = document.getElementById("donutChart").getContext('2d');
 let donutChart = new Chart(donutChartCont, {
   type: 'doughnut',
@@ -149,3 +172,42 @@ let donutChart = new Chart(donutChartCont, {
     },
   }
 });
+
+/* ------------------------------------------- */
+/* LOCAL STORAGE ----------------------------- */
+/* ------------------------------------------- */
+let emailNots = document.querySelector('.settings .email input');
+let profilePublic = document.querySelector('.settings .public input');
+let timezone = document.querySelector('.settings select');
+let saveButton = document.querySelector('.settings .submit');
+let resetButton = document.querySelector('.settings .reset');
+
+emailNots.checked = truebool(localStorage.emailNots);
+profilePublic.checked = truebool(localStorage.profilePublic);
+if (localStorage.timezone==null){
+  timezone.value = "Select Timezone";
+} else {
+  timezone.value = localStorage.timezone;
+}
+
+saveButton.addEventListener('click', ()=>{
+  localStorage.emailNots = emailNots.checked;
+  localStorage.profilePublic = profilePublic.checked;
+  localStorage.timezone = timezone.value;
+  alert("Your settings have been saved!");
+});
+
+resetButton.addEventListener('click', ()=>{
+  emailNots.checked = truebool(localStorage.emailNots);
+  profilePublic.checked = truebool(localStorage.profilePublic);
+  if (localStorage.timezone==null){
+    timezone.value = "Select Timezone";
+  } else {
+    timezone.value = localStorage.timezone;
+  }
+});
+
+function truebool(trueorfalse){
+  if (trueorfalse=="true") {return true;}
+  else {return false;}
+}
