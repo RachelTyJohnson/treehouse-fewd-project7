@@ -33,13 +33,22 @@
       </div>
       <div class="charts">
         <div class="line">
-          Line Chart
+          <h2>Traffic</h2>
+          <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+          </div>
         </div>
         <div class="bar">
-          Bar Chart
+          <div class="chart-container">
+            <h2>Daily Traffic</h2>
+            <canvas id="barChart"></canvas>
+          </div>
         </div>
         <div class="donut">
-          Donut Chart
+          <div class="chart-container">
+            <h2>Mobile Users</h2>
+            <canvas id="donutChart"></canvas>
+          </div>
         </div>
       </div>
       <div class="social">
@@ -178,8 +187,8 @@
 
   </main>
   </div>
-  <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+  <script src="js/script.js"></script>
   </body>
 
   </html>

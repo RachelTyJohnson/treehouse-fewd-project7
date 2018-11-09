@@ -33,6 +33,19 @@
   }
 }
 
+.charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: "line" "bar" "donut";
+}
+@media (min-width: 1024px) {
+  .charts {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "line line" "bar donut";
+  }
+}
+
 header {
   display: flex;
   grid-area: header;
@@ -64,6 +77,16 @@ main {
 
 .settings {
   grid-area: settings;
+}
+
+.charts .line {
+  grid-area: line;
+}
+.charts .bar {
+  grid-area: bar;
+}
+.charts .donut {
+  grid-area: donut;
 }
 
 @keyframes bellalert {
@@ -124,6 +147,7 @@ h1 {
 h2 {
   font-size: 0.8em;
   text-transform: uppercase;
+  margin-bottom: 20px !important;
 }
 
 body {
@@ -244,15 +268,23 @@ main .alert span {
 }
 main .charts {
   padding: 20px 0;
-  display: grid;
+}
+main .charts .chart-container {
+  width: 97.1% !important;
+  margin: 0 auto;
+}
+main .charts .line {
+  padding-bottom: 30px;
+}
+main .charts .bar,
+main .charts .donut {
+  padding: 30px 0;
+  border-top: 1px solid #dedede;
 }
 main .social {
   padding: 20px 0;
   border-top: 1px #dedede solid;
   border-bottom: 1px #dedede solid;
-}
-main .social h2 {
-  margin-bottom: 10px;
 }
 main .social .card-container {
   display: flex;
@@ -295,9 +327,6 @@ main .social .card-container .card span {
 main .bottomwidgets > div {
   padding: 20px 0;
   border-bottom: 1px solid #dedede;
-}
-main .bottomwidgets > div h2 {
-  margin-bottom: 20px;
 }
 @media (min-width: 1024px) {
   main .bottomwidgets > div:nth-of-type(2n+1) {

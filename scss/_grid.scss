@@ -37,6 +37,19 @@
   }
 }
 
+.charts{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-auto-rows: auto;
+  grid-template-areas: "line" "bar" "donut";
+  @include desktop{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "line line"
+      "bar donut";
+  }
+}
+
 header{
   display:flex;
   grid-area: header;
@@ -68,4 +81,16 @@ main{
 
 .settings{
   grid-area:settings;
+}
+
+.charts{
+  .line{
+    grid-area:line;
+  }
+  .bar{
+    grid-area:bar;
+  }
+  .donut{
+    grid-area:donut;
+  }
 }

@@ -26,6 +26,7 @@ h1{
 h2{
   font-size:0.8em;
   text-transform: uppercase;
+  margin-bottom:20px !important;
 }
 
 body{
@@ -138,17 +139,26 @@ main{
   }
 
   .charts{
+    .chart-container{
+      width:97.1% !important;
+      margin: 0 auto;
+    }
     padding: 20px 0;
-    display:grid;
+    .line{
+      padding-bottom:30px;
+    }
+    .bar,
+    .donut{
+      padding:30px 0;
+      border-top: 1px solid $brand-color-mutual-darker;
+    }
   }
 
   .social{
     padding:20px 0;
     border-top:1px $brand-color-mutual-darker solid;
     border-bottom:1px $brand-color-mutual-darker solid;
-    h2{
-      margin-bottom:10px;
-    }
+
     .card-container{
       display:flex;
       flex-direction: column;
@@ -192,9 +202,9 @@ main{
     >div{
       padding:20px 0;
       border-bottom:1px solid $brand-color-mutual-darker;
-      h2{
-        margin-bottom:20px;
-      }
+
+
+
       @include desktop{
         &:nth-of-type(2n+1){
           border-right:1px solid $brand-color-mutual-darker;
