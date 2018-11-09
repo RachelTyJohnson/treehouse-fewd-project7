@@ -12,8 +12,12 @@ let messagebutton = document.querySelector('#messagebutton');
 messagebutton.addEventListener('click', (e) => {
   let message = e.target.previousElementSibling;
   let user = e.target.previousElementSibling.previousElementSibling;
-  if (message.value == "" || user.value == "") {
-    window.alert("You are missing a user or message");
+  if (message.value == "" && user.value == "") {
+    window.alert("Give us something to work with!");
+  } else if (message.value=="" && user.value!==""){
+    window.alert("Please write a Message");
+  } else if (message.value!=="" && user.value=="") {
+    window.alert("Please specify a User");
   } else {
     window.alert("Message sent to " + user.value + "!");
     message.value = "";
