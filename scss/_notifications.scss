@@ -1,6 +1,13 @@
 .notification {
   position: relative;
   text-align: right;
+  h6{
+    background-color:red;
+    color:white;
+    position:absolute;
+    padding:0 2px;
+    z-index:100;
+  }
 }
 
 .notification img {
@@ -19,6 +26,7 @@
   display: none;
   text-align: left;
   z-index:1000;
+
 }
 
 .notification-menu li {

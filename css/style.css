@@ -129,6 +129,13 @@ main {
   position: relative;
   text-align: right;
 }
+.notification h6 {
+  background-color: red;
+  color: white;
+  position: absolute;
+  padding: 0 2px;
+  z-index: 100;
+}
 
 .notification img {
   height: 35px;

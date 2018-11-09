@@ -9,12 +9,25 @@ let main = function() {
 };
 $(document).ready(main);
 
+let nots = document.querySelector('.notification h6');
+nots.textContent = "4";
+
 let removeNotification = document.querySelector('.notification-menu');
 removeNotification.addEventListener('click', (e) => {
   if (e.target.tagName == "SPAN"){
     let alert = e.target.parentNode;
     let main = alert.parentNode;
     main.removeChild(alert);
+    let nottext = nots.textContent;
+    nots.textContent = nottext-1;
+    if (nots.textContent == "0"){
+      nots.style.display='none';
+      let noNots = document.createElement('li');
+      let noNotsP = document.createElement('p');
+      noNotsP.textContent = "No new notifications";
+      noNots.appendChild(noNotsP);
+      main.appendChild(noNots);
+    }
   }
 })
 
