@@ -30,7 +30,7 @@
     "newmembers" "recent" "message" "settings";
 
   @include desktop{
-    grid-template:1fr 1fr / 1fr 1fr;
+    grid-template-columns:1fr 1fr;
     grid-template-areas:
       "newmembers recent"
       "message settings";

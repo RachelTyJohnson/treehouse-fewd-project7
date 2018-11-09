@@ -31,7 +31,17 @@
         <p><strong>Alert!</strong> There are monsters nearby.</p>
         <span class="removealert"><strong>x</strong></span>
       </div>
-
+      <div class="charts">
+        <div class="line">
+          Line Chart
+        </div>
+        <div class="bar">
+          Bar Chart
+        </div>
+        <div class="donut">
+          Donut Chart
+        </div>
+      </div>
       <div class="social">
         <h2>Social Stats</h2>
         <div class="card-container">
@@ -39,14 +49,14 @@
             <img src="icons/icon-twitter.svg" />
             <div class="social-details">
               <h3>Twitter</h3>
-              <span>1,345</span>
+              <span>9,345</span>
             </div>
           </div>
           <div class="card">
             <img src="icons/icon-facebook.svg" />
             <div class="social-details">
               <h3>Facebook</h3>
-              <span>8,739</span>
+              <span>7,739</span>
             </div>
           </div>
           <div class="card">
@@ -131,26 +141,42 @@
             <img src="icons/arrow.svg" />
           </div>
         </div>
-
-
-
-
         <div class="message">
           <h2>Message User</h2>
           <input type="text" placeholder='Search for User' />
           <textarea rows="5" placeholder="Message for User"></textarea>
           <button id="messagebutton" type="submit">SEND</button>
         </div>
-
-
-
-
         <div class="settings">
           <h2>Settings</h2>
+          <div class="email">
+            <p>Send Email Notifications</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <div></div>
+            </label>
+          </div>
+          <div class="public">
+            <p>Set Profile to Public</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <div></div>
+            </label>
+          </div>
+          <select>
+            <option selected disabled hidden>Select Timezone</option>
+            <option>Northern Hemisphere</option>
+            <option>Southern Hemisphere</option>
+          </select>
+          <div class="buttons">
+            <button type="submit">Save</button>
+            <button type="reset">Cancel</button>
+          </div>
         </div>
       </div>
+  </div>
 
-    </main>
+  </main>
   </div>
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>

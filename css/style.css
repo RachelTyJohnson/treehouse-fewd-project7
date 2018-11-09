@@ -28,7 +28,7 @@
 }
 @media (min-width: 1024px) {
   .bottomwidgets {
-    grid-template: 1fr 1fr/1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "newmembers recent" "message settings";
   }
 }
@@ -229,8 +229,7 @@ main .topsection input:focus {
     width: 300px;
   }
 }
-main .alert, main .bottomwidgets .message .sentalert,
-main .bottomwidgets .message .senderror {
+main .alert {
   background-color: #459b80;
   padding: 10px 15px;
   border-radius: 5px;
@@ -240,9 +239,12 @@ main .bottomwidgets .message .senderror {
   opacity: 1;
   transition: opacity 0.3s linear;
 }
-main .alert span, main .bottomwidgets .message .sentalert span,
-main .bottomwidgets .message .senderror span {
+main .alert span {
   cursor: pointer;
+}
+main .charts {
+  padding: 20px 0;
+  display: grid;
 }
 main .social {
   padding: 20px 0;
@@ -261,8 +263,12 @@ main .social .card-container .card {
   border-radius: 5px;
   padding: 15px 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+}
+main .social .card-container .card h3 {
+  font-size: 0.9em;
 }
 main .social .card-container .card img {
   width: 70px;
@@ -270,7 +276,8 @@ main .social .card-container .card img {
   margin-right: 20px;
 }
 main .social .card-container .card span {
-  font-size: 2em;
+  font-size: 2.3em;
+  line-height: 1;
 }
 @media (min-width: 1024px) {
   main .social .card-container {
@@ -305,7 +312,6 @@ main .bottomwidgets .recent .actioncontainer {
   display: flex;
   align-items: center;
   padding: 5px 0;
-  margin-right: 20px;
   font-size: 0.8em;
 }
 main .bottomwidgets .newmembers .actioncontainer:not(:last-of-type),
@@ -330,6 +336,11 @@ main .bottomwidgets .newmembers .actioncontainer .details p {
 main .bottomwidgets .newmembers .actioncontainer .details span {
   font-size: 0.7rem;
 }
+@media (min-width: 1024px) {
+  main .bottomwidgets .newmembers .actioncontainer {
+    padding-right: 20px;
+  }
+}
 main .bottomwidgets .recent .actioncontainer .details p {
   padding-right: 20px;
 }
@@ -346,17 +357,26 @@ main .bottomwidgets .recent .actioncontainer img:nth-of-type(2) {
 main .bottomwidgets .recent .actioncontainer img:nth-of-type(2):hover {
   opacity: 1;
 }
-main .bottomwidgets .message {
-  padding-right: 20px;
+main .bottomwidgets button {
+  width: 100%;
+  border: 0;
+  background-color: #459b80;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 10px;
 }
-main .bottomwidgets .message .sentalert,
-main .bottomwidgets .message .senderror {
-  margin-bottom: 5px;
-  text-align: center;
-  display: none;
+main .bottomwidgets button:hover {
+  background-color: #2d6654;
 }
-main .bottomwidgets .message .senderror {
-  background-color: darkred;
+@media (min-width: 1024px) {
+  main .bottomwidgets .message {
+    padding-right: 20px;
+  }
 }
 main .bottomwidgets .message input,
 main .bottomwidgets .message textarea {
@@ -370,20 +390,65 @@ main .bottomwidgets .message input:focus,
 main .bottomwidgets .message textarea:focus {
   border-color: #459b80;
 }
-main .bottomwidgets .message button {
-  width: 100%;
-  border: 0;
-  background-color: #459b80;
-  color: white;
-  border-radius: 5px;
-  padding: 20px;
-  font-weight: 700;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.2s;
+main .bottomwidgets .settings p {
+  font-size: 0.9em;
 }
-main .bottomwidgets .message button:hover {
-  background-color: #2d6654;
+main .bottomwidgets .settings .email,
+main .bottomwidgets .settings .public {
+  display: flex;
+  margin-bottom: 20px;
+}
+main .bottomwidgets .settings .switch {
+  margin-left: auto;
+  display: inline-block;
+  font-size: 20px;
+  height: 1em;
+  width: 2em;
+  border: 2px solid #459b80;
+  background: #dedede;
+  border-radius: 1em;
+}
+main .bottomwidgets .settings .switch input {
+  position: absolute;
+  opacity: 0;
+}
+main .bottomwidgets .settings .switch div {
+  height: 100%;
+  width: 50%;
+  border-radius: 1em;
+  background: #FFF;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+main .bottomwidgets .settings .switch input + div {
+  background-color: #ababab;
+}
+main .bottomwidgets .settings .switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  background-color: #459b80;
+}
+main .bottomwidgets .settings select {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+main .bottomwidgets .settings .buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+main .bottomwidgets .settings .buttons button {
+  width: 48%;
+}
+main .bottomwidgets .settings .buttons button[type=reset] {
+  background-color: #999;
+}
+main .bottomwidgets .settings .buttons button[type=reset]:hover {
+  background-color: #555;
 }
 
 /*# sourceMappingURL=style.css.map */
