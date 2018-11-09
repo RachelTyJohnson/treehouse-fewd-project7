@@ -133,6 +133,7 @@ main {
   background-color: #347183;
   color: white;
   position: absolute;
+  transform: translatey(-5px);
   border-radius: 2px;
   padding: 0 2px;
   z-index: 100;
@@ -267,6 +268,7 @@ header {
 }
 header .bell {
   height: 25px;
+  cursor: pointer;
 }
 header .bell:hover {
   animation: bellalert 1s infinite linear;
@@ -367,6 +369,19 @@ main .alert span {
 }
 main .charts {
   padding: 20px 0;
+}
+main .charts .chartbuttons ul li {
+  display: inline-block;
+  padding: 0;
+  font-size: 0.8em;
+  background-color: #459b80;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .charts .chartbuttons ul li.selected {
+  background-color: #4290A8;
 }
 main .charts .chart-container {
   width: 97% !important;

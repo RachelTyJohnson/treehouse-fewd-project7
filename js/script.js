@@ -81,6 +81,10 @@ messagebutton.addEventListener('click', (e) => {
 /* ------------------------------------------- */
 
 /* Variables */
+let hourButton = document.querySelector('.charts .hour');
+let dayButton = document.querySelector('.charts .day');
+let weekButton = document.querySelector('.charts .week');
+let monthButton = document.querySelector('.charts .month');
 let mq = window.matchMedia("(min-width: 1024px)");
 let legendPosition;
 let lineRatio;
@@ -97,10 +101,10 @@ let lineChartCont = document.getElementById("lineChart").getContext('2d');
 let lineChart = new Chart(lineChartCont, {
   type: 'line',
   data: {
-    labels: ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"],
+    labels: ["16-22","23-29","30-5","6-12","13-19","20-26","27-3","4-10","11-17","18-24","25-31"],
     datasets: [{
       label: 'Visitors',
-      data: [1000, 870, 1204, 1300, 1260, 1584, 1496, 1349, 1792, 1572, 1504, 2059],
+      data: [0, 750, 1750, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2000],
       backgroundColor: 'rgba(69, 155, 128, 0.4)',
       borderColor: '#459b80',
       borderWidth: 2,
@@ -108,19 +112,53 @@ let lineChart = new Chart(lineChartCont, {
   },
   options:{
     aspectRatio:lineRatio,
-    legend:{
-      display:false,
-    },
+    legend:{display:false},
     elements:{
-      point:{
-        backgroundColor:'white',
-      },
-      line:{
-        tension:0,
-      }
+      point:{backgroundColor:'white'},
+      line:{tension:0}
     }
   }
 });
+
+hourButton.addEventListener('click', ()=>{
+  resetButtonColors();
+  hourButton.classList.add('selected');
+  lineChart.data.labels = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"]
+  lineChart.data.datasets[0].data = [5, 30, 15, 35, 20, 45, 20, 15, 35, 15, 20];
+  lineChart.update();
+});
+
+dayButton.addEventListener('click', ()=>{
+  resetButtonColors();
+  dayButton.classList.add('selected');
+  lineChart.data.labels = ["Wed", "Thur", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
+  lineChart.data.datasets[0].data = [220, 320, 290, 190, 240, 450, 295, 220, 400, 320, 200];
+  lineChart.update();
+});
+
+weekButton.addEventListener('click', ()=>{
+  resetButtonColors();
+  weekButton.classList.add('selected');
+  lineChart.data.labels = ["16-22","23-29","30-5","6-12","13-19","20-26","27-3","4-10","11-17","18-24","25-31"]
+  lineChart.data.datasets[0].data = [0, 750, 1750, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2000];
+  lineChart.update();
+});
+
+monthButton.addEventListener('click', ()=>{
+  resetButtonColors();
+  monthButton.classList.add('selected');
+  lineChart.data.labels = ["Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr"]
+  lineChart.data.datasets[0].data = [2000, 4302, 2503, 5063, 4032, 2853, 4063, 5024, 8063, 5605, 7059];
+  lineChart.update();
+});
+
+
+function resetButtonColors(){
+  let allLis = document.querySelectorAll('.charts li');
+  for (let i=0; i<allLis.length; i++){
+    allLis[i].classList.remove('selected');
+  }
+}
 
 /* Bar Chart */
 let barChartCont = document.getElementById("barChart").getContext('2d');
@@ -130,7 +168,7 @@ let barChart = new Chart(barChartCont, {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [{
       label: 'Visitors',
-      data: [50, 40, 60, 24, 60, 64, 67],
+      data: [75, 100, 175, 125, 225, 200, 100],
       backgroundColor: '#459b80',
       borderColor: '#459b80',
       borderWidth: 2,

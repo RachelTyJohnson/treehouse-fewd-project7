@@ -46,6 +46,7 @@ header {
   background-color:$brand-color-primary;
   .bell{
     height:25px;
+    cursor:pointer;
     &:hover{
       animation: bellalert 1s infinite linear;
     }
@@ -141,6 +142,21 @@ main{
   }
 
   .charts{
+    .chartbuttons{
+      ul li{
+        display:inline-block;
+        padding:0;
+        font-size:0.8em;
+        background-color:$brand-color-primary;
+        color:white;
+        padding:2px 10px;
+        border-radius:10px;
+        cursor:pointer;
+        &.selected{
+          background-color:$brand-color-secondary;
+        }
+      }
+    }
     .chart-container{
       width:97% !important;
       margin: 0 auto;
