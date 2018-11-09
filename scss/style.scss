@@ -43,14 +43,14 @@ header {
   align-items: center;
   background-color:$brand-color-primary;
   .bell{
-    height:50%;
+    height:25px;
     &:hover{
       animation: bellalert 1s infinite linear;
     }
   }
   .logo{
     margin-right:auto;
-    height:100%;
+    height:50px;
   }
   .user{
     display:flex;
@@ -140,7 +140,7 @@ main{
 
   .charts{
     .chart-container{
-      width:97.1% !important;
+      width:97% !important;
       margin: 0 auto;
     }
     padding: 20px 0;

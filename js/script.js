@@ -21,6 +21,17 @@ messagebutton.addEventListener('click', (e) => {
   }
 });
 
+let mq = window.matchMedia("(min-width: 1024px)");
+let legendPosition;
+let lineRatio;
+if (mq.matches){
+  legendPosition = 'right';
+  lineRatio=4;
+} else {
+  legendPosition = 'top';
+  lineRatio=2;
+}
+
 let lineChartCont = document.getElementById("lineChart").getContext('2d');
 let lineChart = new Chart(lineChartCont, {
   type: 'line',
@@ -35,7 +46,7 @@ let lineChart = new Chart(lineChartCont, {
     }]
   },
   options:{
-    aspectRatio:3,
+    aspectRatio:lineRatio,
     legend:{
       display:false,
     },
@@ -79,13 +90,7 @@ let barChart = new Chart(barChartCont, {
   }
 });
 
-let mq = window.matchMedia("(min-width: 600px)");
-let legendPosition;
-if (mq.matches){
-  legendPosition = 'right';
-} else {
-  legendPosition = 'top';
-}
+
 
 let donutChartCont = document.getElementById("donutChart").getContext('2d');
 let donutChart = new Chart(donutChartCont, {
