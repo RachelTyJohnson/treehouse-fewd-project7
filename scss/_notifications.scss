@@ -1,0 +1,89 @@
+.notification {
+  position: relative;
+  text-align: right;
+}
+
+.notification img {
+  height:35px;
+}
+
+.notification-menu {
+  position: absolute;
+  top: 42px;
+  left: -100px;
+  background-color: #e5e5e5;
+  border: #989898;
+  padding: 10px;
+  list-style: none;
+  width: 250px;
+  display: none;
+  text-align: left;
+  z-index:1000;
+}
+
+.notification-menu li {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  display:flex;
+  span{
+    margin-left:auto;
+    cursor:pointer;
+  }
+}
+
+.notification-menu .avatar {
+  border-radius:100%;
+  margin-right:5px;
+}
+
+.notification-menu h3 {
+  font-size: 15px;
+  margin: 0 0 5px 0;
+  display: inline;
+}
+
+.notification-menu p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.post {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+
+.post .avatar {
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.post h3 {
+  font-size: 16px;
+  margin-top: 0;
+  display: inline;
+}
+
+.post p {
+  font-size: 14px;
+}
+
+.post p + img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn {
+  color: #333;
+  border-color: #ccc;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.btn-like {
+  background-color: #CC0000;
+  border-color: #B20000;
+  color: #fff;
+}

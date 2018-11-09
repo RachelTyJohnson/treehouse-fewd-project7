@@ -1,3 +1,23 @@
+let main = function() {
+  $('.notification img').click(function() {
+    $('.notification-menu').toggle();
+  });
+
+  $('.post .btn').click(function() {
+    $(this).toggleClass('btn-like');
+  });
+};
+$(document).ready(main);
+
+let removeNotification = document.querySelector('.notification-menu');
+removeNotification.addEventListener('click', (e) => {
+  if (e.target.tagName == "SPAN"){
+    let alert = e.target.parentNode;
+    let main = alert.parentNode;
+    main.removeChild(alert);
+  }
+})
+
 let removealert = document.querySelector('main .alert .removealert');
 removealert.addEventListener('click', (e) => {
   let alert = e.target.parentNode.parentNode;

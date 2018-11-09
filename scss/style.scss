@@ -1,7 +1,8 @@
 @import 'variables',
         'mixins',
         'grid',
-        'animations';
+        'animations',
+        'notifications';
 
 *{
   margin: 0;
@@ -32,6 +33,7 @@ h2{
 body{
   background-image:url('../img/background.png');
 }
+
 
 header {
   padding:7px 10px;
