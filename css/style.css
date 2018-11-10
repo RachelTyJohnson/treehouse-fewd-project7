@@ -18,6 +18,7 @@
 @media (min-width: 1024px) {
   .container {
     -ms-grid-template: 60px minmax(500px, 1fr)/60px minmax(500px, 1fr);
+    -webkit-grid-template: 60px minmax(500px, 1fr)/60px minmax(500px, 1fr);
   }
 }
 
